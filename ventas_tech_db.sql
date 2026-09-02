@@ -1,4 +1,11 @@
-CREATE DATABASE ventas_tech_bd;
+IF DB_ID( 'ventas_tech_db') is null
+
+CREATE DATABASE ventas_tech_db;
+GO
+
+USE ventas_tech_db;
+GO
+
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS productos;
 DROP TABLE IF EXISTS clientes;
@@ -8,22 +15,21 @@ CREATE TABLE categorias( id_categoria INT PRIMARY KEY , nombre_categoria VARCHAR
 descripcion VARCHAR (200) ) ;
 
 CREATE TABLE clientes ( id_cliente INT PRIMARY KEY, nombre VARCHAR(100) NOT NULL,
-email VARCHAR(100) UNIQUE, cuidad VARCHAR (50),fecha_registro DATE NOT NULL);
+email VARCHAR(100) UNIQUE, ciudad VARCHAR (50),fecha_registro DATE NOT NULL);
 
 CREATE TABLE productos ( id_producto INT PRIMARY KEY , nombre_producto varchar(100) not null,
-id_categoria int foreign key (id_categoria) references categorias (id_categoria) , precio decimal (10,2) not null, stock int default 0 ,
-activo tinyint default 1);
+id_categoria int foreign key (id_categoria) references categorias (id_categoria) ,
+precio decimal (10,2) not null, stock int default 0 ,activo tinyint default 1);
 
 
-CREATE TABLE ventas ( id_venta int primary key, id_cliente int foreign key (id_cliente) references clientes(id_cliente), id_producto int foreign key
-(id_producto) references productos(id_producto),
+CREATE TABLE ventas ( id_venta int primary key, id_cliente int foreign key (id_cliente) references clientes(id_cliente), 
+id_producto int foreign key (id_producto) references productos(id_producto),
 cantidad int not null, precio_unitario decimal(10,2) not null, fecha_venta date not null);
 
-INSERT INTO categorias VALUES (1,'COMPUTACION','LAPTOS,PCS Y MONITORES');
-INSERT INTO categorias VALUES (2,'ACCESORIOS','PERIFERICOS Y COMPLEMENTOS');
-INSERT INTO categorias VALUES (3,'AUDIO','AURICULARES Y PARLANTES');
-INSERT INTO categorias VALUES (4,'ALMACENAMIENTO','DISCOS Y MEMORIAS');
-
+INSERT INTO categorias VALUES (1, 'Computación', 'Laptops, PCs y monitores');
+INSERT INTO categorias VALUES (2, 'Accesorios', 'Periféricos y complementos');
+INSERT INTO categorias VALUES (3, 'Audio', 'Auriculares y parlantes');
+INSERT INTO categorias VALUES (4, 'Almacenamiento', 'Discos y memorias');
 
 INSERT INTO clientes VALUES (1, 'María López',   'maria@mail.com',   'Buenos Aires', '2024-01-05');
 INSERT INTO clientes VALUES (2, 'Carlos Ruiz',   'carlos@mail.com',  'Córdoba',      '2024-01-10');
@@ -53,7 +59,4 @@ SELECT * FROM categorias;
 SELECT * FROM clientes;
 SELECT * FROM productos;
 SELECT * FROM ventas;
-
-
-
 
