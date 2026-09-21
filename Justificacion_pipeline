@@ -1,0 +1,16 @@
+
+
+Nulos en clientes:
+Los nulos de email y ciudad los reemplacé por "Sin datos" para no eliminar clientes completos por falta de información en esos campos.
+
+Duplicado en productos:
+Eliminé uno de los registros duplicados del id_producto 103 para que cada producto tenga un identificador único.
+
+Precio nulo en producto 109:
+Dejé el precio como nulo porque no hay información suficiente para saber cuál es el precio correcto. No quise inventar un valor ni eliminar el producto completo solo porque falta ese dato.
+
+Categoría nula en producto 111:
+Completé la categoría como "Computación", porque es una Laptop y los demás productos de la subcategoría Laptops pertenecen a esa categoría.
+
+Combinación de tablas:
+Combiné Fact_Ventas con Dim_Productos usando id_producto para agregar nombre_producto y categoria a las ventas.
