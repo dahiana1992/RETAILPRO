@@ -1,0 +1,52 @@
+RetailPro
+Descripción del proyecto
+
+RetailPro es un proyecto de análisis de datos de ventas desarrollado con SQL Server Management Studio (SSMS) y Power BI. 
+Incluye consultas SQL para analizar información comercial y un pipeline ETL para preparar los datos para su análisis y visualización.
+
+Herramientas utilizadas
+SQL Server Management Studio (SSMS): utilizado para crear y trabajar con la base de datos y ejecutar los scripts SQL.
+Power BI: utilizado para trabajar con el pipeline ETL y el análisis de los datos.
+GitHub: utilizado para almacenar y versionar los archivos del proyecto.
+
+
+Cómo ejecutar los scripts SQL
+1. Crear la base de datos
+
+Abrir SQL Server Management Studio (SSMS) y ejecutar:
+
+ventas_tech_db.sql
+
+Este script crea la base de datos ventas_tech_db, las tablas necesarias y carga los datos de ejemplo.
+
+2. Ejecutar las consultas de negocio
+
+Una vez creada y cargada la base de datos, abrir:
+
+m4_consultas_negocio.sql
+
+Seleccionar la base de datos ventas_tech_db y ejecutar las consultas para obtener los indicadores y resultados del análisis.
+
+3. Ejecutar las consultas con JOIN
+
+Abrir:
+
+m5_consultas_joins.sql
+
+y ejecutar las consultas sobre la base de datos ventas_tech_db.
+
+Estas consultas permiten relacionar información entre las diferentes tablas para analizar clientes, productos, categorías y ventas.
+
+Power BI
+
+El archivo:
+
+Pipeline_ETL_Quintela_Dahiana.pbix
+
+contiene el trabajo realizado en Power BI para continuar con el análisis y tratamiento de los datos.
+
+Para utilizarlo, es necesario tener Microsoft Power BI Desktop instalado y abrir el archivo .pbix.
+
+Flujo general del proyecto
+
+Base de datos → SQL → Análisis de negocio → JOINs → ETL / Power BI → Visualización y análisis
